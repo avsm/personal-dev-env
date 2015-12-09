@@ -1,0 +1,6 @@
+[user]
+        name = Anil Madhavapeddy
+        email = anil@recoil.org
+
+[push]
+	default = simple
