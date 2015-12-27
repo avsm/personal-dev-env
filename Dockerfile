@@ -1,6 +1,6 @@
 FROM alpine:latest
 MAINTAINER Anil Madhavapeddy <anil@recoil.org>
-RUN apk add --update alpine-sdk
+RUN apk add --update alpine-sdk openssh
 RUN adduser -S -u 501 -g 20 avsm
 RUN echo "avsm ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 RUN echo "PACKAGER=\"Anil Madhavapeddy <anil@recoil.org>\"" >> /etc/abuild.conf
