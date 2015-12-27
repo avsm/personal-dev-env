@@ -1,14 +1,4 @@
-FROM alpine:latest
+FROM nixos/nix:1.9
 MAINTAINER Anil Madhavapeddy <anil@recoil.org>
-RUN apk add --update alpine-sdk
-RUN adduser -S -u 501 -g 20 avsm
-RUN echo "avsm ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-RUN echo "PACKAGER=\"Anil Madhavapeddy <anil@recoil.org>\"" >> /etc/abuild.conf
-RUN addgroup avsm abuild
-RUN chgrp abuild /var/cache/distfiles
-RUN chmod g+w /var/cache/distfiles
-USER avsm
-WORKDIR /home/avsm
-RUN git config --global user.name "Anil Madhavapeddy"
-RUN git config --global user.email "anil@recoil.org"
-RUN abuild-keygen -a -n -i
+RUN nix-channel --add http://nixos.org/releases/nixpkgs/nixpkgs-16.03pre71923.3087ef3/ dev
+RUN nix-channel --update
