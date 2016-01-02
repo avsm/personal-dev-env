@@ -1,0 +1,5 @@
+FROM avsm/personal-dev-env:alpine
+MAINTAINER Anil Madhavapeddy <anil@recoil.org>
+RUN git clone -b ocaml-ports git://github.com/avsm/aports
+WORKDIR /home/avsm/aports/testing/opam
+RUN abuild -R
