@@ -11,4 +11,3 @@ USER avsm
 WORKDIR /home/avsm
 RUN git config --global user.name "Anil Madhavapeddy"
 RUN git config --global user.email "anil@recoil.org"
-RUN abuild-keygen -a -n -i
