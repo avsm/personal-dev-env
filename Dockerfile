@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine
 MAINTAINER Anil Madhavapeddy <anil@recoil.org>
 RUN apk add --update alpine-sdk openssh
 RUN adduser -S -u 501 -g 20 avsm
